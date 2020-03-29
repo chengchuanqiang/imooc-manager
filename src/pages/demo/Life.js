@@ -1,6 +1,9 @@
 import React from "react";
 import Child from "./Child";
-import './style.less'
+
+import {Button} from 'antd';
+
+import './style.less';
 
 export default class Life extends React.Component {
 
@@ -30,8 +33,8 @@ export default class Life extends React.Component {
         return (
             <div className="content">
                 <p>react的生命周期</p>
-                <button onClick={this.handleAdd}>点击一下</button>
-                <button onClick={this.handleClick.bind(this)}>点击一下</button>
+                <Button type="primary" onClick={this.handleAdd}>点击一下</Button>
+                <Button onClick={this.handleClick.bind(this)}>点击一下</Button>
                 <p>{this.state.count}</p>
 
                 <Child name={this.state.count}/>
