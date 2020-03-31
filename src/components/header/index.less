@@ -1,4 +1,8 @@
+@import "../../style/default";
+
 .header {
+
+  background-color: @colorM;
 
   .header-top {
     height: 60px;
@@ -18,11 +22,23 @@
 
     .breadcrumb-title {
       text-align: center;
+      font-size: @fontC;
+
+      &:after {
+        position: absolute;
+        content: '';
+        left: 85px;
+        top: 39px;
+        border-top: 9px solid @colorM;
+        border-left: 12px solid transparent;
+        border-right: 12px solid transparent;
+
+      }
     }
 
     .weather {
       text-align: right;
-      font-size: 14px;
+      font-size: @fontE;
       .date {
         margin-right: 10px;
         vertical-align: middle;
