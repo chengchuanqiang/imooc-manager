@@ -28,7 +28,7 @@ class Buttons extends React.Component {
     render() {
         return (
             <div>
-                <Card title="基础按钮" style={{width: 1166, marginBottom: 30}}>
+                <Card title="基础按钮" className="card-wrap">
                     <Button type="primary">Imooc</Button>
                     <Button>Imooc</Button>
                     <Button type="dashed">Imooc</Button>
@@ -36,7 +36,7 @@ class Buttons extends React.Component {
                     <Button disabled>Imooc</Button>
                 </Card>
 
-                <Card title="图形按钮" style={{width: 1166, marginBottom: 30}}>
+                <Card title="图形按钮" className="card-wrap">
                     <Button icon={<PlusOutlined />}>创建</Button>
                     <Button icon={<EditOutlined />}> 修改</Button>
                     <Button icon={<DeleteOutlined />}>删除</Button>
@@ -45,7 +45,7 @@ class Buttons extends React.Component {
                     <Button icon={<DownloadOutlined/>} type="primary">下载</Button>
                 </Card>
 
-                <Card title="Loading按钮" style={{width: 1166, marginBottom: 30}}>
+                <Card title="Loading按钮" className="card-wrap">
                     <Button type="primary" loading>确定</Button>
                     <Button type="primary" shape="circle" loading/>
 
@@ -54,7 +54,7 @@ class Buttons extends React.Component {
                     <Button type="primary" onClick={this.removeLoading}>关闭</Button>
                 </Card>
 
-                <Card title="按钮组" style={{width: 1166, marginBottom: 30}}>
+                <Card title="按钮组" className="card-wrap">
                     <Radio.Group>
                         <Radio.Button value="large">Large</Radio.Button>
                         <Radio.Button value="default">Default</Radio.Button>
@@ -62,7 +62,7 @@ class Buttons extends React.Component {
                     </Radio.Group>
                 </Card>
 
-                <Card title="按钮尺寸" style={{width: 1166, marginBottom: 30}}>
+                <Card title="按钮尺寸" className="card-wrap">
                     <Button type="primary" size="large">Large</Button>
                     <Button type="primary" size="default">Default</Button>
                     <Button type="primary" size="small">Small</Button>
