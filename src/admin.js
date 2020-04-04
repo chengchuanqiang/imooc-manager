@@ -6,7 +6,6 @@ import './style/common.less'
 import Header from './components/header';
 import Footer from './components/footer';
 import Nav from "./components/nav/index";
-import Home from './pages/home/index'
 
 class Admin extends Component {
 
