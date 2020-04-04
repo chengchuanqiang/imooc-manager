@@ -14,9 +14,7 @@ class Admin extends Component {
         return (
             <Row className="container">
                 <Col span={4} className="nav-left">
-                    <Nav>
-
-                    </Nav>
+                    <Nav/>
                 </Col>
                 <Col span={20} className="main">
                     <Header/>
