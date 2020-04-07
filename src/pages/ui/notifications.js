@@ -1,8 +1,6 @@
 import React from 'react';
 import {Card, Button, notification} from 'antd';
 
-import {LoadingOutlined} from '@ant-design/icons';
-
 import './ui.less'
 
 class Notifications extends React.Component {
