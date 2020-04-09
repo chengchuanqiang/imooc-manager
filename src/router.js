@@ -7,6 +7,7 @@ import Models from './pages/ui/models';
 import Loadings from './pages/ui/loadings';
 import Notifications from './pages/ui/notifications';
 import Messages from './pages/ui/messages';
+import MyTabs from './pages/ui/myTabs';
 
 import NoMatch from './pages/noMatch'
 import {HashRouter, Route, Switch} from 'react-router-dom'
@@ -28,6 +29,7 @@ class IRouter extends Component {
                                     <Route path="/admin/ui/loadings" component={Loadings}/>
                                     <Route path="/admin/ui/notification" component={Notifications}/>
                                     <Route path="/admin/ui/messages" component={Messages}/>
+                                    <Route path="/admin/ui/tabs" component={MyTabs}/>
 
                                     <Route component={NoMatch}/>
                                 </Switch>
