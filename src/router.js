@@ -9,6 +9,7 @@ import Notifications from './pages/ui/notifications';
 import Messages from './pages/ui/messages';
 import MyTabs from './pages/ui/myTabs';
 import Gallery from './pages/ui/gallery';
+import MyCarousel from './pages/ui/carousel';
 
 import NoMatch from './pages/noMatch'
 import {HashRouter, Route, Switch} from 'react-router-dom'
@@ -32,6 +33,7 @@ class IRouter extends Component {
                                     <Route path="/admin/ui/messages" component={Messages}/>
                                     <Route path="/admin/ui/tabs" component={MyTabs}/>
                                     <Route path="/admin/ui/gallery" component={Gallery}/>
+                                    <Route path="/admin/ui/carousel" component={MyCarousel}/>
 
                                     <Route component={NoMatch}/>
                                 </Switch>
