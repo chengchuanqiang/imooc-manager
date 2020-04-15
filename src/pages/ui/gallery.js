@@ -35,7 +35,7 @@ class Gallery extends React.Component {
             return (
                 <Card
                     style={{marginBottom: 10}}
-                    cover={<img src={'/gallery/' + item}/>}
+                    cover={<img src={'/gallery/' + item} alt=""/>}
                     onClick={() => this.openGallery(item)}
                 >
                     <Card.Meta

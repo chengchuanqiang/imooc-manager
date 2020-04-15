@@ -46,7 +46,7 @@ class Header extends Component {
                 <Row className="header-top">
                     <Col span={24}>
                         欢迎，{this.state.userName}
-                        <a href="#">退出</a>
+                        <a href="/logout">退出</a>
                     </Col>
                 </Row>
                 <Row className="breadcrumb">
@@ -56,7 +56,7 @@ class Header extends Component {
                     <Col span={20} className="weather">
                         <span className="date">{this.state.sysTime}</span>
                         <span className="weather-img">
-                            <img src={this.state.dayPictureUrl}/>
+                            <img src={this.state.dayPictureUrl} alt=""/>
                         </span>
                         <span className="weather-detail">
                             {this.state.weather}
