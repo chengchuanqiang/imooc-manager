@@ -11,6 +11,7 @@ import MyTabs from './pages/ui/myTabs';
 import Gallery from './pages/ui/gallery';
 import MyCarousel from './pages/ui/carousel';
 import FormLogin from './pages/form/login';
+import FormRegister from './pages/form/register';
 
 import NoMatch from './pages/noMatch'
 import {HashRouter, Route, Switch} from 'react-router-dom'
@@ -37,6 +38,7 @@ class IRouter extends Component {
                                     <Route path="/admin/ui/carousel" component={MyCarousel}/>
 
                                     <Route path="/admin/form/login" component={FormLogin}/>
+                                    <Route path="/admin/form/reg" component={FormRegister}/>
 
                                     <Route component={NoMatch}/>
                                 </Switch>
