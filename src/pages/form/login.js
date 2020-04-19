@@ -95,7 +95,7 @@ class FormLogin extends React.Component {
                                 <Checkbox>记住密码</Checkbox>
                             </FromItem>
 
-                            <a className="login-form-forgot" href="">
+                            <a className="login-form-forgot" href="#">
                                 忘记密码
                             </a>
                         </FromItem>
