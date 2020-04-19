@@ -1,6 +1,7 @@
 import React from 'react';
 import {Card, Table, Modal, Button, message} from 'antd';
 import axios from '../../axios'
+import Utils from '../../utils/utils'
 
 import './index.less'
 
@@ -11,6 +12,10 @@ class BasicTable extends React.Component {
         this.state = {
             dataSource: []
         };
+
+        this.params = {
+            page: 1
+        }
     }
 
     componentDidMount() {
@@ -20,11 +25,14 @@ class BasicTable extends React.Component {
 
     // 动态获取mock数据
     request = () => {
+
+        let _this = this;
+
         axios.ajax({
             url: '/table/list1',
             data: {
                 params: {
-                    page: 1
+                    page: _this.params.page
                 }
             }
         }).then((res) => {
@@ -35,7 +43,13 @@ class BasicTable extends React.Component {
 
             if (res.code == 0) {
                 this.setState({
-                    dataSource: res.result.list
+                    dataSource: res.result.list,
+                    selectedRowKeys: [],
+                    selectedRows: null,
+                    pagination: Utils.pagination(res, (current) => {
+                        _this.params.page = current;
+                        this.request();
+                    })
                 });
             }
         })
@@ -200,6 +214,15 @@ class BasicTable extends React.Component {
                         columns={columns}
                         dataSource={this.state.dataSource}
                         pagination={false}
+                    />
+                </Card>
+
+                <Card title="Mock-分页" className="card-wrap">
+                    <Table
+                        bordered
+                        columns={columns}
+                        dataSource={this.state.dataSource}
+                        pagination={this.state.pagination}
                     />
                 </Card>
 

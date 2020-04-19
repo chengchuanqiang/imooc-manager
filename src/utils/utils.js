@@ -13,5 +13,20 @@ export default {
         let seconds = date.getSeconds();
 
         return year + "-" + month + "-" + day + " " + hour + ":" + minute + ":" + seconds;
-    }
+    },
+
+    pagination(data, callback){
+        return {
+            onChange: (current) => {
+                callback(current)
+            },
+            current: data.result.page,
+            pageSize: data.result.pageSize,
+            total: data.result.totalCount,
+            showTotal: () => {
+                return `共${data.result.totalCount}条`
+            },
+            showQuickJumper: true
+        }
+    },
 }
