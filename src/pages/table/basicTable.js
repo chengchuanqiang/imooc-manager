@@ -1,5 +1,5 @@
 import React from 'react';
-import {Card, Table} from 'antd';
+import {Card, Table, Modal, Button, message} from 'antd';
 import axios from '../../axios'
 
 import './index.less'
@@ -9,53 +9,11 @@ class BasicTable extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            dataSource: [],
-            dataSource2: []
+            dataSource: []
         };
     }
 
     componentDidMount() {
-
-        const dataSource = [
-            {
-                id: '1',
-                userName: 'ccq',
-                sex: '1',
-                state: '1',
-                interest: '1',
-                birthday: '2000-01-01',
-                address: '北京市海淀区奥林匹克公园',
-                time: '09:00'
-
-            },
-            {
-                id: '2',
-                userName: 'ccq',
-                sex: '1',
-                state: '1',
-                interest: '1',
-                birthday: '2000-01-01',
-                address: '北京市海淀区奥林匹克公园',
-                time: '09:00'
-
-            },
-            {
-                id: '3',
-                userName: 'ccq',
-                sex: '1',
-                state: '1',
-                interest: '1',
-                birthday: '2000-01-01',
-                address: '北京市海淀区奥林匹克公园',
-                time: '09:00'
-
-            }
-        ];
-
-        this.setState({
-            dataSource: dataSource
-        });
-
         this.request();
 
     }
@@ -70,13 +28,47 @@ class BasicTable extends React.Component {
                 }
             }
         }).then((res) => {
+            // 给数据动态添加key
+            res.result.list.map((item, index) => {
+                item.key = index;
+            });
+
             if (res.code == 0) {
                 this.setState({
-                    dataSource2: res.result.list
+                    dataSource: res.result.list
                 });
             }
         })
     };
+
+    onRowClick = (record, index) => {
+        let selectKey = [index];
+        Modal.info({
+            title: '信息',
+            content: `用户名：${record.userName},用户爱好：${record.interest}`
+        });
+        this.setState({
+            selectedRowKeys: selectKey,
+            selectedItem: record
+        })
+    };
+
+    // 多选执行删除动作
+    handleDelete = (() => {
+        let rows = this.state.selectedRows;
+        let ids = [];
+        rows.map((item) => {
+            ids.push(item.id)
+        });
+        Modal.confirm({
+            title: '删除提示',
+            content: `您确定要删除这些数据吗？${ids.join(',')}`,
+            onOk: () => {
+                message.success('删除成功');
+                this.request();
+            }
+        })
+    });
 
     render() {
 
@@ -141,32 +133,75 @@ class BasicTable extends React.Component {
             }
         ];
 
+        const {selectedRowKeys} = this.state;
+        const rowSelection = {
+            type: 'radio',
+            selectedRowKeys: selectedRowKeys
+        };
+
+        const rowCheckSelection = {
+            type: 'checkbox',
+            selectedRowKeys,
+            onChange: (selectedRowKeys, selectedRows) => {
+                this.setState({
+                    selectedRowKeys: selectedRowKeys,
+                    selectedRows: selectedRows
+                })
+            }
+        };
+
         return (
 
             <div>
 
                 <Card title="基础表格" className="card-wrap">
-
                     <Table
                         bordered
                         columns={columns}
                         dataSource={this.state.dataSource}
                         pagination={false}
                     />
-
                 </Card>
 
-                <Card title="动态数据渲染表格" className="card-wrap">
-
+                <Card title="动态数据渲染表格-mock" className="card-wrap">
                     <Table
                         bordered
                         columns={columns}
-                        dataSource={this.state.dataSource2}
+                        dataSource={this.state.dataSource}
                         pagination={false}
                     />
-
                 </Card>
 
+                <Card title="mock-单选" className="card-wrap">
+                    <Table
+                        rowSelection={rowSelection}
+                        bordered
+                        columns={columns}
+                        dataSource={this.state.dataSource}
+                        pagination={false}
+
+                        onRow={(record, index) => {
+                            return {
+                                onClick: () => {
+                                    this.onRowClick(record, index);
+                                }
+                            };
+                        }}
+                    />
+                </Card>
+
+                <Card title="Mock-多选" className="card-wrap">
+                    <div style={{marginBottom: 10}}>
+                        <Button onClick={this.handleDelete}>删除</Button>
+                    </div>
+                    <Table
+                        bordered
+                        rowSelection={rowCheckSelection}
+                        columns={columns}
+                        dataSource={this.state.dataSource}
+                        pagination={false}
+                    />
+                </Card>
 
             </div>
         )
