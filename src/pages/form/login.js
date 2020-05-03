@@ -17,7 +17,7 @@ class FormLogin extends React.Component {
     render() {
         return (
 
-            <div>
+            <div className="card-group-wrap">
 
                 <Card title="登录行内表单" className="card-wrap">
 

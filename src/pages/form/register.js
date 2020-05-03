@@ -100,7 +100,7 @@ class FormRegister extends React.Component {
 
         return (
 
-            <div>
+            <div className="card-group-wrap">
 
                 <Card title="注册表单" className="card-wrap">
                     <Form

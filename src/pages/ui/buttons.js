@@ -27,7 +27,7 @@ class Buttons extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="card-group-wrap">
                 <Card title="基础按钮" className="card-wrap">
                     <Button type="primary">Imooc</Button>
                     <Button>Imooc</Button>

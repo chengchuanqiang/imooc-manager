@@ -166,7 +166,7 @@ class BasicTable extends React.Component {
 
         return (
 
-            <div>
+            <div className="card-group-wrap">
 
                 <Card title="基础表格" className="card-wrap">
                     <Table

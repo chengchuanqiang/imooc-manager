@@ -24,7 +24,7 @@ class Notifications extends React.Component {
     render() {
 
         return (
-            <div>
+            <div className="card-group-wrap">
                 <Card title="通知提醒框" className="card-wrap">
                     <Button type="primary" onClick={() => this.openNotification('success')}>success</Button>
                     <Button type="primary" onClick={() => this.openNotification('info')}>info</Button>

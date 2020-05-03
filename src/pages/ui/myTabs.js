@@ -74,7 +74,7 @@ class MyTabs extends React.Component {
     render() {
 
         return (
-            <div>
+            <div className="card-group-wrap">
                 <Card title="tab页签" className="card-wrap">
 
                     <Tabs defaultActiveKey="1" onChange={this.handleCallback}>

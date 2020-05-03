@@ -16,6 +16,9 @@ import FormRegister from './pages/form/register';
 import BasicTable from './pages/table/basicTable';
 import HighTable from './pages/table/highTable';
 import City from './pages/city';
+import Order from './pages/order/index.js';
+import Common from './common';
+import OrderDetail from './pages/order/OrderDetail';
 
 import NoMatch from './pages/noMatch'
 import {HashRouter, Route, Switch} from 'react-router-dom'
@@ -50,10 +53,22 @@ class IRouter extends Component {
 
                                     <Route path="/admin/city" component={City}/>
 
+                                    <Route path="/admin/order" component={Order}/>
+
                                     <Route component={NoMatch}/>
                                 </Switch>
                             </Admin>
                         }/>
+
+                        <Route path="/common" render={() =>
+                            <Common>
+                                <Switch>
+                                    <Route path="/common/order/detail/:orderId" component={OrderDetail}/>
+                                    <Route component={NoMatch}/>
+                                </Switch>
+                            </Common>
+                        }/>
+
                     </Switch>
                 </App>
             </HashRouter>

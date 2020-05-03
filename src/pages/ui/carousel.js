@@ -8,7 +8,7 @@ class MyCarousel extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="card-group-wrap">
                 <Card title="文字轮播" className="card-wrap">
                     <Carousel autoplay effect="fade">
                         <div>

@@ -41,7 +41,7 @@ class Nav extends Component {
     render() {
 
         return (
-            <div>
+            <div className="nav-left">
                 <div className="logo">
                     <img alt="" src="/assets/logo-ant.svg"/>
                     <h1>Imooc MS</h1>

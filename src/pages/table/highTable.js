@@ -379,7 +379,7 @@ class HighTable extends React.Component {
 
         return (
 
-            <div>
+            <div className="card-group-wrap">
                 <Card title="表头固定表格" className="card-wrap">
                     <Table
                         bordered

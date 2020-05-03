@@ -33,7 +33,7 @@ class Models extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="card-group-wrap">
                 <Card title="基础模态框" className="card-wrap">
                     <Button type="primary" onClick={() => this.handleShowModal('showModel1')}>open</Button>
                     <Button type="primary" onClick={() => this.handleShowModal('showModel2')}>自定义页脚</Button>

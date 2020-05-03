@@ -13,7 +13,7 @@ class Loadings extends React.Component {
         const antIcon = <LoadingOutlined style={{fontSize: 24}} spin/>;
 
         return (
-            <div>
+            <div className="card-group-wrap">
                 <Card title="spin用法" className="card-wrap">
                     <Spin size="small"/>
                     <br/>

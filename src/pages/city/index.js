@@ -6,7 +6,7 @@ import Utils from "./../../utils/utils";
 import "./index.less";
 
 const FormItem = Form.Item;
-const Opinion = Select.Option;
+const Option = Select.Option;
 
 class City extends React.Component {
 
@@ -197,25 +197,25 @@ class City extends React.Component {
                     >
                         <FormItem label="选择城市" name="cityId"{...formItemLayout}>
                             <Select>
-                                <Opinion value="">全部</Opinion>
-                                <Opinion value="1">北京市</Opinion>
-                                <Opinion value="2">上海市</Opinion>
-                                <Opinion value="3">广州市</Opinion>
-                                <Opinion value="4">深圳市</Opinion>
+                                <Option value="">全部</Option>
+                                <Option value="1">北京市</Option>
+                                <Option value="2">上海市</Option>
+                                <Option value="3">广州市</Option>
+                                <Option value="4">深圳市</Option>
                             </Select>
                         </FormItem>
 
                         <FormItem label="营用模式" name="mode" {...formItemLayout}>
                             <Select>
-                                <Opinion value="1">自营</Opinion>
-                                <Opinion value="2">加盟</Opinion>
+                                <Option value="1">自营</Option>
+                                <Option value="2">加盟</Option>
                             </Select>
                         </FormItem>
 
                         <FormItem label="用车模式" name="useMode" {...formItemLayout}>
                             <Select>
-                                <Opinion value="1">指定停车点</Opinion>
-                                <Opinion value="2">禁停区</Opinion>
+                                <Option value="1">指定停车点</Option>
+                                <Option value="2">禁停区</Option>
                             </Select>
                         </FormItem>
                     </Form>
@@ -257,11 +257,11 @@ class FilterForm extends React.Component {
                         placeholder="全部"
                         style={{width: 100}}
                     >
-                        <Opinion value="">全部</Opinion>
-                        <Opinion value="1">北京市</Opinion>
-                        <Opinion value="2">上海市</Opinion>
-                        <Opinion value="3">广州市</Opinion>
-                        <Opinion value="4">深圳市</Opinion>
+                        <Option value="">全部</Option>
+                        <Option value="1">北京市</Option>
+                        <Option value="2">上海市</Option>
+                        <Option value="3">广州市</Option>
+                        <Option value="4">深圳市</Option>
                     </Select>
                 </FormItem>
 
@@ -270,9 +270,9 @@ class FilterForm extends React.Component {
                         placeholder="全部"
                         style={{width: 150}}
                     >
-                        <Opinion value="">全部</Opinion>
-                        <Opinion value="1">指定停车点模式</Opinion>
-                        <Opinion value="2">禁停区模式</Opinion>
+                        <Option value="">全部</Option>
+                        <Option value="1">指定停车点模式</Option>
+                        <Option value="2">禁停区模式</Option>
                     </Select>
                 </FormItem>
 
@@ -281,9 +281,9 @@ class FilterForm extends React.Component {
                         placeholder="全部"
                         style={{width: 80}}
                     >
-                        <Opinion value="">全部</Opinion>
-                        <Opinion value="1">自营</Opinion>
-                        <Opinion value="2">加盟</Opinion>
+                        <Option value="">全部</Option>
+                        <Option value="1">自营</Option>
+                        <Option value="2">加盟</Option>
                     </Select>
                 </FormItem>
 
@@ -292,9 +292,9 @@ class FilterForm extends React.Component {
                         placeholder="全部"
                         style={{width: 100}}
                     >
-                        <Opinion value="">全部</Opinion>
-                        <Opinion value="1">已授权</Opinion>
-                        <Opinion value="2">未授权</Opinion>
+                        <Option value="">全部</Option>
+                        <Option value="1">已授权</Option>
+                        <Option value="2">未授权</Option>
                     </Select>
                 </FormItem>
 

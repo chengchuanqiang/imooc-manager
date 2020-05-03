@@ -13,7 +13,7 @@ class Messages extends React.Component {
     render() {
 
         return (
-            <div>
+            <div className="card-group-wrap">
                 <Card title="全局提示" className="card-wrap">
                     <Button type="primary" onClick={() => this.showMessage("success")}>Success</Button>
                     <Button type="primary" onClick={() => this.showMessage("info")}>info</Button>
